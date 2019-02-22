@@ -74,6 +74,9 @@ if __name__ == "__main__":
     if os.path.exists('.api_key'):
         api_key = np.loadtxt('.api_key',dtype="S50")
         api_key = str(api_key)
+    elif os.path.exists('~/.api_key'):
+        api_key = np.loadtxt('~/.api_key',dtype="S50")
+        api_key = str(api_key)
     else:
         print "Please, create file .api_key with your API key."
         sys.exit()
