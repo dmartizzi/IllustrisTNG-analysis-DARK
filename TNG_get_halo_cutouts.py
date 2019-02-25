@@ -41,6 +41,9 @@ def set_simulation(base_url,sim_name):
     if sim_name in names:
         i = names.index(sim_name)
         sim = get( r['simulations'][i]['url'] )
+        print("Box size = %f kpc/h"%sim["boxsize"])
+        print("DM particle mass = %f x 1e10 Msun/h"%sim["mass_dm"])
+        print("Gas particle mass = %f x 1e10 Msun/h"%sim["mass_gas"])
         return sim
     else:
         print "The selected simulation name doesn't exist!!!"
